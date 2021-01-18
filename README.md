@@ -1,6 +1,6 @@
 # Web Scraper
 
-Scrapes web pages that contains posts and shows title, subtitle, published date and content
+Scrapes title, subtitle, published date and content from posts
 
 ## Prerequisites
 - OpenJDK ~1.80
