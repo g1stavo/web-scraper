@@ -14,7 +14,7 @@
             <artifactId>exec-maven-plugin</artifactId>
             <version>1.2.1</version>
                 <configuration>
-                  <mainClass>knewinchallenge.KnewinChallenge</mainClass>
+                  <mainClass>scraper.Main</mainClass>
                 </configuration>
           </plugin>
     </plugins>

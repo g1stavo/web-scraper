@@ -1,4 +1,4 @@
-package knewinchallenge;
+package scraper;
 
 import java.io.IOException;
 import static java.lang.System.out;
@@ -13,15 +13,12 @@ import org.jsoup.nodes.Document;
  * print a webpage title, subtitle, published date 
  * and content.
  * 
- * @author Gustavo de Castro Salvador
+ * @author g1stavo
  */
 public class Scraper {
-    
     private Document doc;
     
     /**
-    * Constructor.
-    * 
     * @param url (required) URL of the webpage to be scraped.
     */
     public Scraper(String url) throws IOException {
@@ -29,7 +26,7 @@ public class Scraper {
     }
     
     /**
-    * Print webpage title.
+    * Prints webpage title.
     */
     public void getTitle() {
         String title = "Título: " + doc.select("h1").text();
@@ -37,7 +34,7 @@ public class Scraper {
     }
     
     /**
-    * Print webpage subtitle.
+    * Prints webpage subtitle.
     */
     public void getSubtitle() {
         String subtitle = "Subtítulo: " + doc.select("i > span").first().text();
@@ -45,7 +42,7 @@ public class Scraper {
     }
     
     /**
-    * Print webpage published date in the dd-MM-yyyy format.
+    * Prints webpage published date in the dd-MM-yyyy format.
     */
     public void getPublishedDate() throws ParseException {
         String rawDate = doc.select("meta[property=article:published_time]").attr("content");
@@ -60,7 +57,7 @@ public class Scraper {
     }
     
     /**
-    * Print webpage clean content.
+    * Prints webpage clean content.
     */
     public void getContent() {
         doc.select("i > span").remove();
@@ -68,5 +65,4 @@ public class Scraper {
         String content = doc.select(".post-content").text();
         out.println("Conteúdo: " + content);
     }
-    
 }

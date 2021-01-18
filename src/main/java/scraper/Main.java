@@ -1,4 +1,4 @@
-package knewinchallenge;
+package scraper;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -8,20 +8,20 @@ import java.text.ParseException;
  * Only functionality is to run the 
  * Scraper class.
  * 
- * @author Gustavo de Castro Salvador
+ * @author g1stavo
  */
-public class KnewinChallenge {
+public class Main {
 
     /**
-    * Print webpage title, subtitle, published date 
+    * Prints webpage title, subtitle, published date 
     * and content.
     */
     public static void main(String[] args) throws IOException, ParseException {
-        Scraper scraper = new Scraper("http://scinova.com.br/inseed-amplia-participacao-em-sc-com-investimento-de-r-3-milhoes-na-startup-knewin/");
+        String url = "http://scinova.com.br/inseed-amplia-participacao-em-sc-com-investimento-de-r-3-milhoes-na-startup-knewin/";
+        Scraper scraper = new Scraper(url);
         scraper.getTitle();
         scraper.getSubtitle();
         scraper.getPublishedDate();
         scraper.getContent();
     }
-    
 }
